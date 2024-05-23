@@ -361,7 +361,7 @@ Runs formatter, linter and import sorting to the requested files.
 
 Run various checks on a set of files.
 
-**Usage**: **`biome`** **`lint`** \[**`--apply`**\] \[**`--apply-unsafe`**\] \[**`--staged`**\] \[**`--changed`**\] \[**`--since`**=_`REF`_\] \[_`PATH`_\]...
+**Usage**: **`biome`** **`lint`** \[**`--write`**\] \[**`--unsafe`**\] \[**`--staged`**\] \[**`--changed`**\] \[**`--since`**=_`REF`_\] \[_`PATH`_\]...
 
 **Set of properties to integrate Biome with a VCS software.**
 - **`    --vcs-client-kind`**=_`<git>`_ &mdash;
@@ -432,10 +432,16 @@ Run various checks on a set of files.
 
 
 **Available options:**
+- **`    --write`** &mdash;
+  Writes safe fixes
+- **`    --unsafe`** &mdash;
+  Allow to do unsafe fixes, should be used with `--write` or `--fix`
+- **`    --fix`** &mdash;
+  Alias for `--write`, writes safe fixes
 - **`    --apply`** &mdash;
-  Apply safe fixes, formatting and import sorting
+  Alias for `--write`, writes safe fixes (deprecated, use `--write`)
 - **`    --apply-unsafe`** &mdash;
-  Apply safe fixes and unsafe fixes, formatting and import sorting
+  Alias for `--write --unsafe`, writes safe and unsafe fixes (deprecated, use `--write --unsafe`)
 - **`    --stdin-file-path`**=_`PATH`_ &mdash;
   Use this option when you want to format code piped from `stdin`, and print the output to `stdout`.
 
